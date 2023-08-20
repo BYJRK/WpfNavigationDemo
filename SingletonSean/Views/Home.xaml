@@ -1,0 +1,24 @@
+﻿<UserControl x:Class="SingletonSean.Views.Home"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:SingletonSean.Views"
+             xmlns:vm="clr-namespace:SingletonSean.ViewModels"
+             d:DataContext="{d:DesignInstance Type=vm:HomeViewModel}"
+             d:DesignHeight="450"
+             d:DesignWidth="800"
+             mc:Ignorable="d">
+    <Grid>
+        <TextBlock HorizontalAlignment="Center"
+                   VerticalAlignment="Center"
+                   d:Text="Hello, XXX!"
+                   Text="{Binding UserName, StringFormat='Hello, {0}!'}"
+                   FontSize="32" />
+        <Button Margin="10"
+                HorizontalAlignment="Right"
+                VerticalAlignment="Bottom"
+                Content="Logout"
+                Command="{Binding LogoutCommand}" />
+    </Grid>
+</UserControl>

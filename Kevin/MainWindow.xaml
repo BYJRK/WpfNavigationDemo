@@ -1,0 +1,42 @@
+﻿<Window x:Class="Kevin.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Kevin"
+        xmlns:views="clr-namespace:Kevin.Views"
+        Title="Kevin Bost's Rentopoly"
+        Width="800"
+        Height="450"
+        d:DataContext="{d:DesignInstance Type=local:MainViewModel}"
+        mc:Ignorable="d">
+    <!--<TabControl>
+        <TabItem Header="Page 1">
+            <views:Page1 x:Name="Page1" />
+        </TabItem>
+        <TabItem Header="Page 2">
+            <views:Page2 x:Name="Page2" />
+        </TabItem>
+        <TabItem Header="Page 3">
+            <views:Page3 x:Name="Page3" />
+        </TabItem>
+    </TabControl>-->
+    <TabControl ItemsSource="{Binding ViewModels}">
+        <TabControl.ItemTemplate>
+            <DataTemplate>
+                <TextBlock Text="{Binding Header}" />
+            </DataTemplate>
+        </TabControl.ItemTemplate>
+        <TabControl.Resources>
+            <DataTemplate DataType="{x:Type local:Page1ViewModel}">
+                <views:Page1 />
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type local:Page2ViewModel}">
+                <views:Page2 />
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type local:Page3ViewModel}">
+                <views:Page3 />
+            </DataTemplate>
+        </TabControl.Resources>
+    </TabControl>
+</Window>
