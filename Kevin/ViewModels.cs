@@ -1,22 +1,27 @@
 ﻿namespace Kevin;
 
-public class Page1ViewModel : ViewModelBase
+public abstract class PageViewModelBase : ViewModelBase
 {
-    public string Header { get; } = "Page 1";
+    public string? Header { get; set; }
+}
+
+public class Page1ViewModel : PageViewModelBase
+{
+    public Page1ViewModel() => Header = "Page 1";
 
     public string PageMessage { get; set; } = "Hello, Page 1";
 }
 
-public class Page2ViewModel : ViewModelBase
+public class Page2ViewModel : PageViewModelBase
 {
-    public string Header { get; } = "Page 2";
+    public Page2ViewModel() => Header = "Page 2";
 
     public string PageMessage { get; set; } = "Hello, Page 2";
 }
 
-public class Page3ViewModel : ViewModelBase
+public class Page3ViewModel : PageViewModelBase
 {
-    public string Header { get; } = "Page 3";
+    public Page3ViewModel() => Header = "Page 3";
 
     public string PageMessage { get; set; } = "Hello, Page 3";
 }

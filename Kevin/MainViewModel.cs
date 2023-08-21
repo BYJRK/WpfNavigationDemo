@@ -8,12 +8,7 @@ namespace Kevin
 
         public MainViewModel(Page1ViewModel p1, Page2ViewModel p2, Page3ViewModel p3)
         {
-            ViewModels = new List<ViewModelBase>
-            {
-                p1,
-                p2,
-                p3
-            };
+            ViewModels = new List<ViewModelBase> { p1, p2, p3 };
         }
     }
 }
